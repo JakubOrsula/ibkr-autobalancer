@@ -1,12 +1,33 @@
 # ibkr-autobalancer
 
-Ultimate goal of this project is (was) to automate execution of simple DCA-like strategies like:
-1. SPY buy and hold - check how much cash is left. More than to buy a share? Buy it. - implemented.
-    Click [here](https://github.com/JakubOrsula/ibkr-autobalancer/blob/master/src/demos/basic_demo.ipynb) to see it in action
-2. [Hedgies adventure](https://www.bogleheads.org/forum/viewtopic.php?t=272007) - keep balanced exposure to two (or more) assets.
-3. Target exposure - say you got 100k. You want to maintain 150k exposure to SPY. Buy/sell UPRO/SPUU/SPY to maintain it no matter the current price.
+Showcase use of ib api using [ib_insync](https://ib-insync.readthedocs.io/api.html) library.
+
+Demos and working code to implement some basic DCA like strategies are included.
+
+## Strategies
+
+### SPY buy and hold - implemented
+Check how much cash is left. More than to buy a share? Buy it. In the [demo](https://github.com/JakubOrsula/ibkr-autobalancer/blob/master/src/demos/basic_demo.ipynb) `VWCE` etf is used.
+In the [script](https://github.com/JakubOrsula/ibkr-autobalancer/blob/master/src/strategies/cash_burner.py) you can specify whatever stock you want.
+More configurability from command line / settings file coming later.
+
+### Composite portfolio autobalance - not yet
+A more complex version of the previous strategy. Keeps balance between assets, like 87.9% IWDA, 11.9% EMIM, 0.2% cash. 
+This should be useful for people running things like [hedgies adventure](https://www.bogleheads.org/forum/viewtopic.php?t=272007)
+or replicating finax portfolios. If I am not mistaken this is **the** patented finax only feature - rebalancing the portfolio once it deviates more than
+the [PATENTED](https://www.finax.eu/sk/blog/rebalansing-pod-lupou-polskych-blogerov) constant.
+I have partial implementation of this, but I abandoned it because I replaced the IWDA:EIMI 88:12 with VWRA which does the same thing under the hood.
+
+### Target exposure
+This should be useful for folks running slightly leveraged portfolios. Say you got 100k.
+You want to get 120k exposure to SPY. You buy some SPUU or UPRO (or whatever) and balance things around as price moves up or down.
+This is slightly more complex than it seems to be, you need to account for non-constant delta of leveraged etfs and currency conversion and stuff.
+I have a partial implementation for this, since I use FIO (because muh us etfs) I would first implement FIO api and then this strategy.
+On higher leverages this will fuck you over.
 
 Future goals include making this versatile enough to support more than just IB but also FIO (because of the us etfs restrictions).
+I have also some scripts lying around that upload results to google docs / postgres / yahoo finance, it would be nice to integrate them as well.
+If you want these features, please start this repo, so I know there is some interest.
 
 ## Installation
 
@@ -38,7 +59,8 @@ Tested on python 3.8 but should work on any recent version of python. If not ope
 
 ## Usage
 
-
+Use `python3 main.py` in the root of the project. It will run the cash burner strategy.
+Use jupyter notebook in demos to experiment.
 
 ## Project structure
 
@@ -48,9 +70,9 @@ In the utils folder are various helpers and shorthands.
 
 ## Q&A
 
-1. **But why shouldn't I use more advanced strategy tool like ninja?**
+1. **But why shouldn't I use more advanced strategy tool like [pltl](https://www.pairtradinglab.com/ptltrader)?**
     
-    Well if you are looking for complex strategies that run fast you probably should.
+    Well if you are looking for complex strategies that run fast you probably should. The pltl has a major disadvantage that it only supports USD as a base currency.
     The major advantage of running this are that it's small, free, low on dependencies and unconstrained  in power.
 
 2. **Will this be maintained?**
@@ -61,6 +83,42 @@ In the utils folder are various helpers and shorthands.
 3. **Fio support when?**
 
     Soon^tm
+
+## Major painpoints and future dev ideas
+
+This section should be converted to issues.
+
+### Support for autologin
+
+Use [this project](https://github.com/IbcAlpha/IBC) or higher abstraction like [this](https://github.com/mvberg/ib-gateway-docker) to avoid login prompts.
+Apart from the obvious advantages this has few disadvantages:
+1. now you rely on more third party software, you rely on the fact that it will be kept up to date and will not scam you out of your money (they use some cdns which could be attacked)
+
+This lib is used to rebalance long term portfolios. It should not be run more than once a week. I run it once a month.
+
+### Dockerize
+
+This should be fairly straightforward I just don't have the time for it right now.
+This should make the setup much easier for amateurs and also make it possible to deploy it on vps.
+
+### Use ib for prices
+
+Currently, prices are taken from yahoo finance which is ideal if you don't pay for market data.
+However, there are some folks which do, and it would be nice for them to have the prices straight from ib and not rely on yahoo.
+
+### Other products than stocks/etfs
+
+It would be nice if the script could manage exposure (in strategy 3) using futures as well as leveraged etfs. This involves rollover
+and other derivatives specific stuff, so it needs extra work.
+
+
+### Log trades to external service
+
+I have some partial implementations for this already, I just need to clean them up and verify that they work.
+I want to add support for:
+1. google docs
+2. yahoo finance
+3. postgres (hasura and you can connect it to whatever)
 
 ## References
 

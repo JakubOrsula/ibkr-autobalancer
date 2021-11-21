@@ -59,7 +59,7 @@ def execute_order(ib, direction, ticker, count, limit):
     return trade.log
 
 
-if __name__ == "__main__":
+def run_strategy():
     ib = connect()
     free_cash = get_cash_to_burn(ib)
     wanted_stock = 'VWCE'  # todo take it from args or smthing
@@ -69,3 +69,7 @@ if __name__ == "__main__":
     for log in logs:
         print(log.status)
     ib.disconnect()
+
+
+if __name__ == "__main__":
+    run_strategy()
