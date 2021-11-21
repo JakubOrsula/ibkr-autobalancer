@@ -4,6 +4,9 @@ Showcase use of ib api using [ib_insync](https://ib-insync.readthedocs.io/api.ht
 
 Demos and working code to implement some basic DCA like strategies are included.
 
+Help is needed and appreciated! If you are able and willing open a pull request!
+I might make some issues and specify how they should be implemented and label them as good first issue.
+
 ## Strategies
 
 ### SPY buy and hold - implemented
