@@ -1,7 +1,8 @@
 # ibkr-autobalancer
 
 Ultimate goal of this project is (was) to automate execution of simple DCA-like strategies like:
-1. SPY buy and hold - check how much cash is left. More than to buy a share? Buy it. - implemented
+1. SPY buy and hold - check how much cash is left. More than to buy a share? Buy it. - implemented.
+    Click [here](https://github.com/JakubOrsula/ibkr-autobalancer/blob/master/src/demos/basic_demo.ipynb) to see it in action
 2. [Hedgies adventure](https://www.bogleheads.org/forum/viewtopic.php?t=272007) - keep balanced exposure to two (or more) assets.
 3. Target exposure - say you got 100k. You want to maintain 150k exposure to SPY. Buy/sell UPRO/SPUU/SPY to maintain it no matter the current price.
 
