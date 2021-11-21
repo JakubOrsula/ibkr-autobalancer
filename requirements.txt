@@ -1,0 +1,2 @@
+jupyter
+ib-insync
