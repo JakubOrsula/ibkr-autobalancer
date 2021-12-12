@@ -5,3 +5,4 @@ yfinance
 scipy
 pandas~=1.3.2
 pandas-profiling
+tabulate

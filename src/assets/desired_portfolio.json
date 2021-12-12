@@ -1,0 +1,19 @@
+{
+  "name": "IWDA+EMIM",
+  "cash": {
+    "currency": "EUR",
+    "requiredBalance": "50"
+  },
+  "balances": [
+    {
+      "name": "IWDA",
+      "exchangeLocation": "AS",
+      "requiredPercentage": 88
+    },
+    {
+      "name": "EMIM",
+      "exchangeLocation": "AS",
+      "requiredPercentage": 12
+    }
+  ]
+}

@@ -38,7 +38,7 @@ If you are a newbie and there's more of you I'm willing to do a twitch stream wh
 Tested on python 3.8 but should work on any recent version of python. If not open an issue. The steps are kinda spartan, use issues if your urn into trouble.
 
 ### So you need
-1. python - [windows (7 or newer)](https://www.python.org/downloads/release/python-3812/) (or use windows store),
+1. python 3.8 - [windows (7 or newer)](https://www.python.org/downloads/release/python-3812/) (or use windows store),
     for macos use `brew install python` and for linux you already have python.
 2. pip - we need to install dependencies somehow. Pip should be already installed on windows
    (just use `py -m pip install --upgrade pip` to make sure it's up-to-date) and mac,

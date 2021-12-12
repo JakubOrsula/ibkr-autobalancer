@@ -1,0 +1,26 @@
+{
+  "name": "Test portfolio",
+  "positions":
+          [
+            {
+              "name": "EUR",
+              "size": 100000
+            },
+            {
+              "name": "USD",
+              "size": -900000
+            },
+            {
+              "name": "TSLA",
+              "size": -10
+            },
+            {
+              "name": "UPRO",
+              "size": 500
+            },
+            {
+              "name": "IBKR",
+              "size": 5
+            }
+          ]
+}
