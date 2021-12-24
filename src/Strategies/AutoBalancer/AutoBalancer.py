@@ -85,11 +85,11 @@ if __name__ == "__main__":
     print(f'average deviation: {average_deviation}', f'lowest deviation: {lowest_deviation}', f'highest_deviation: {highest_deviation}', sep='\n')
 
     if opt.trigger_strategy == TriggerStrategy.average and average_deviation > opt.trigger_deviation:
-        print(f'Tiggered by {opt.trigger_strategy.value} being {highest_deviation} which is over specified {opt.trigger_deviation}')
+        print(f'Triggered by {opt.trigger_strategy.value} being {highest_deviation} which is over specified {opt.trigger_deviation}')
     elif opt.trigger_strategy == TriggerStrategy.one_min and highest_deviation > opt.trigger_deviation:
-        print(f'Tiggered by {opt.trigger_strategy.value} being {highest_deviation} which is over specified {opt.trigger_deviation}') # todo abstract duplicity
+        print(f'Triggered by {opt.trigger_strategy.value} being {highest_deviation} which is over specified {opt.trigger_deviation}') # todo abstract duplicity
     elif opt.trigger_strategy == TriggerStrategy.all_min and lowest_deviation > opt.trigger_deviation:
-        print(f'Tiggered by {opt.trigger_strategy.value} being {lowest_deviation} which is over specified {opt.trigger_deviation}')  # todo abstract duplicity
+        print(f'Triggered by {opt.trigger_strategy.value} being {lowest_deviation} which is over specified {opt.trigger_deviation}')  # todo abstract duplicity
     else:
         print(f'Trigger {opt.trigger_strategy.value} not fired. Not rebalancing.')
 
