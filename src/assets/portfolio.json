@@ -4,11 +4,11 @@
           [
             {
               "name": "EUR",
-              "size": 100000
+              "size": 0
             },
             {
               "name": "USD",
-              "size": -900000
+              "size": 0
             },
             {
               "name": "TSLA",
@@ -21,6 +21,15 @@
             {
               "name": "IBKR",
               "size": 5
+            },
+            {
+              "name": "IWDA",
+              "size": 0
+            },
+            {
+              "name": "EMIM",
+              "size": 0
             }
+
           ]
 }

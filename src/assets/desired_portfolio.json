@@ -7,13 +7,17 @@
   "balances": [
     {
       "name": "IWDA",
-      "exchangeLocation": "AS",
-      "requiredPercentage": 88
+      "ibName": "IWDA",
+      "currency": "EUR",
+      "yahooName": "IWDA.AS",
+      "desiredPercentage": 88
     },
     {
       "name": "EMIM",
-      "exchangeLocation": "AS",
-      "requiredPercentage": 12
+      "ibName": "EMIM",
+      "currency": "EUR",
+      "yahooName": "EMIM.AS",
+      "desiredPercentage": 12
     }
   ]
 }
