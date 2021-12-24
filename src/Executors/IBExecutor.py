@@ -3,6 +3,9 @@ import ib_insync as ib_lib
 
 
 class IBExecutor(Executor):
+    """
+    This executor places orders in Trading Workstation via connection provided in constructor.
+    """
     def __init__(self, ib):
         self._ib = ib
 

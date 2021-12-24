@@ -2,6 +2,9 @@ import ib_insync as ib_lib
 
 
 class IBBrokerage:
+    """
+    A singleton handling connection to the brokerage
+    """
     _instance = None
 
     @staticmethod
@@ -11,7 +14,7 @@ class IBBrokerage:
 
         # ensure that we connect just once
         if not ib.isConnected():
-            print('connecting')
+            print('connecting to trader workstation')
             ib.connect(host, port, clientId=clientId, readonly=readonly)
             if ib.isConnected():
                 ib.reqMarketDataType(1)

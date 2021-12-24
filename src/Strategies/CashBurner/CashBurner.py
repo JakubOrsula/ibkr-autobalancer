@@ -17,7 +17,7 @@ def execute():
     CashBurnerOptions.print_options(opt)
     portf_loader = CombinedPortfolioLoader.create_comb_portf_loader(opt.external_portfolio, opt.ib_gateway_port,
                                                                     opt.ib_gateway_readonly)
-    print(portf_loader)
+
     print(portf_loader)
     cash_to_burn = portf_loader.get_position_size(opt.currency)
     yahoo_suffix = ''
