@@ -53,12 +53,13 @@ Tested on python 3.8 but should work on any recent version of python. If not ope
 2. open this repo in terminal `cd ibkr-autobalancer`
 3. *optional* set up virtual environment - `py -m venv env` on windows and `python3 -m venv env` on linux/mac
 4. *optional* activate the environment - `.\env\Scripts\activate` on windows and `source env/bin/activate` on linux/macos
-5. open TWS. Go to `File -> Global configuration... -> API -> Settings`
-6. check `Enable ActiveX and Socket Clients`
-7. uncheck `Read-Only Api` - I highly recommend trying this on demo account first
-8. see if the socket port is 7497. If not either sett it to be 7497 or change it here in code
-9. run `jupyter-notebook` in terminal
-10. play with code execute the cells see the interesting stuff.
+5. run `pip3 install -r requirements.txt` to install dependencies
+6. open TWS. Go to `File -> Global configuration... -> API -> Settings`
+7. check `Enable ActiveX and Socket Clients`
+8. uncheck `Read-Only Api` - I highly recommend trying this on demo account first
+9. see if the socket port is 7497. If not either sett it to be 7497 or change it here in code
+10. run `jupyter-notebook` in terminal
+11. play with code execute the cells see the interesting stuff.
 
 ## Usage
 
