@@ -39,7 +39,7 @@ class TriggerStrategy(enum.Enum):
 class MitigationStrategy(enum.Enum):
     cash_only = "cash-only"  # no selling will take place and the difference will be settled just by cash
     sell = "sell"  # stock will be sold to accumulate enough to rebalance portfolio
-
+    margin = "margin" # todo buy using margin - this needs more specs
 
 class AutoBalancerOptions(BaseOptions):
 

@@ -5,8 +5,6 @@ from src.Executors.DummyExecutor import DummyExecutor
 from src.Executors.IBExecutor import IBExecutor
 from src.Strategies.CashBurner.CashBurnerOptions import CashBurnerOptions
 from src.Portfolios.Loaders.CombinedPortfolioLoader import CombinedPortfolioLoader
-from src.Portfolios.Loaders.IBPortfolioLoader import IBPortfolioLoader
-from src.Portfolios.Loaders.JSONPortfolioLoader import JSONPortfolioLoader
 from src.utils.jo_math import round_nearest
 from src.utils.security_data import get_current_price
 

@@ -1,6 +1,5 @@
 from tabulate import tabulate
 from typing import List
-from collections import defaultdict
 
 from src.Portfolios.Loaders.PortfolioLoader import PortfolioLoader
 from src.Brokerages.IBBrokerage import IBBrokerage
